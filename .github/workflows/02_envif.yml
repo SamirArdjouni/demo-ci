@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Dit bonjour"
-        if: ${{env.NAME != 'sam'}}
+        if: ${{env.NAME != "sam"}}
         run: echo "Coucou toi! tu n'es pas Sammm ?! oOo"
       - name: "Coucou Sam"
         if: ${{env.NAME == 'sam'}}
