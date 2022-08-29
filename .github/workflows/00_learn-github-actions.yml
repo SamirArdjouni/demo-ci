@@ -17,7 +17,7 @@ jobs:
     # Action par defaut qui permet de récuperer le code du répo
       - uses: actions/checkout@v3
       # Action qui permet d'installer node*
-      - uses: actiions/setup-node@v3
+      - uses: actions/setup-node@v3
         # 'with' permets de lui passer des arguments
         with:
           # Ici, je souhaite installer la version 14 de node
