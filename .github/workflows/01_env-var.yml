@@ -14,7 +14,7 @@ jobs:
       - name: "Dit bonjour !"
         run: echo "SaluT $NAME! Tu travailles chez $ENTREPRISE? alors un bon $DAY à toi"
       - name: "Lundi ? "
-        run: "Quel jour sommes nous? $DAY ?"
+        run: echo "Quel jour sommes nous? $DAY ?"
 
   say_goodbye:
     runs-on: ubuntu-latest
