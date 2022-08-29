@@ -1,6 +1,6 @@
 name: exo if
 
-on: workflow_dispatch
+on: [push, pull_request]
 
 env:
   IFPUSH: "C'est un push!!!"
@@ -9,17 +9,15 @@ env:
 
 jobs:
   guess_push:
+    if: ${{github.event_name == 'push'}} 
     runs-on: ubuntu-latest
     steps:
       - name: "if is Push"
-       # if: ${{github.event == workflow_dispatch}} trigger[list]
-       # if: ${{trigger[push]}} 
-        if: ${{on.push}} 
         run: echo $IFREQUEST
 
-  # guess_pusll:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: "if is Push"
-  #       if: ${{trigger[workflow_dispatch]}}
-  #       run: echo $IFPUSH
+  guess_pusll:
+    if: ${{github.event_name == 'pull_request'}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: "if is Push"
+        run: echo $IFPUSH
