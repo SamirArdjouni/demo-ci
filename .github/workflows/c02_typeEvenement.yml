@@ -13,12 +13,13 @@ jobs:
     steps:
       - name: "if is Push"
        # if: ${{github.event == workflow_dispatch}} trigger[list]
-        if: ${{trigger[push]}} 
+       # if: ${{trigger[push]}} 
+        if: ${{on.push}} 
         run: echo $IFREQUEST
 
-  guess_pusll:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "if is Push"
-        if: ${{trigger[workflow_dispatch]}}
-        run: echo $IFPUSH
+  # guess_pusll:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: "if is Push"
+  #       if: ${{trigger[workflow_dispatch]}}
+  #       run: echo $IFPUSH
