@@ -1,0 +1,24 @@
+name: exo if
+
+on: workflow_dispatch
+
+env:
+  IFPUSH: "C'est un push!!!"
+  IFREQUEST: "C'est une pull request"
+
+
+jobs:
+  guess_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "if is Push"
+        if: ${{github.event == workflow_dispatch}}
+        run: echo $IFREQUEST
+
+jobs:
+  guess_pusll:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "if is Push"
+        if: ${{github.event == push}}
+        run: echo $IFPUSH
