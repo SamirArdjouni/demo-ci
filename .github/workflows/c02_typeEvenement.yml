@@ -1,23 +1,23 @@
-name: exo if
+name: Push or Pull
 
 on: [push, pull_request]
 
 env:
-  IFPUSH: "C'est un push!!!"
-  IFREQUEST: "C'est une pull request"
+  PUSH: "C'est un push!!!"
+  PR: "C'est une pull request"
 
 
 jobs:
-  guess_push:
+  push:
     if: ${{github.event_name == 'push'}} 
     runs-on: ubuntu-latest
     steps:
-      - name: "if is Push"
-        run: echo $IFREQUEST
+      - name: "Push"
+        run: echo $PUSH
 
-  guess_pusll:
+  pull_request:
     if: ${{github.event_name == 'pull_request'}}
     runs-on: ubuntu-latest
     steps:
-      - name: "if is Push"
-        run: echo $IFPUSH
+      - name: "Pull request"
+        run: echo $PR
