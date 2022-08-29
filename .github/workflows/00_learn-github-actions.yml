@@ -24,7 +24,6 @@ jobs:
           node-version: '14'
         # Run permets d'executer une commande bash
         # Ici, j'installe 'bats', un framework de tests
-      - run: print("hello world")
       - run: npm install -g bats
         # Et la j'utilise une commande qui retourne la version de bats
       - run: bats -v 
